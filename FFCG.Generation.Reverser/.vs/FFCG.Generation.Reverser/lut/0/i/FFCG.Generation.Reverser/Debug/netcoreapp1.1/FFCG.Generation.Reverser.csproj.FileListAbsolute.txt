@@ -1,0 +1,7 @@
+C:\Users\sophia.caspar\source\repos\CodeIsKing\FFCG.Generation.Reverser\.vs\FFCG.Generation.Reverser\lut\0\b\FFCG.Generation.Reverser\Debug\netcoreapp1.1\FFCG.Generation.Reverser.deps.json
+C:\Users\sophia.caspar\source\repos\CodeIsKing\FFCG.Generation.Reverser\.vs\FFCG.Generation.Reverser\lut\0\b\FFCG.Generation.Reverser\Debug\netcoreapp1.1\FFCG.Generation.Reverser.dll
+C:\Users\sophia.caspar\source\repos\CodeIsKing\FFCG.Generation.Reverser\.vs\FFCG.Generation.Reverser\lut\0\b\FFCG.Generation.Reverser\Debug\netcoreapp1.1\FFCG.Generation.Reverser.pdb
+C:\Users\sophia.caspar\source\repos\CodeIsKing\FFCG.Generation.Reverser\.vs\FFCG.Generation.Reverser\lut\0\i\FFCG.Generation.Reverser\Debug\netcoreapp1.1\FFCG.Generation.Reverser.csproj.CoreCompileInputs.cache
+C:\Users\sophia.caspar\source\repos\CodeIsKing\FFCG.Generation.Reverser\.vs\FFCG.Generation.Reverser\lut\0\i\FFCG.Generation.Reverser\Debug\netcoreapp1.1\FFCG.Generation.Reverser.AssemblyInfo.cs
+C:\Users\sophia.caspar\source\repos\CodeIsKing\FFCG.Generation.Reverser\.vs\FFCG.Generation.Reverser\lut\0\i\FFCG.Generation.Reverser\Debug\netcoreapp1.1\FFCG.Generation.Reverser.dll
+C:\Users\sophia.caspar\source\repos\CodeIsKing\FFCG.Generation.Reverser\.vs\FFCG.Generation.Reverser\lut\0\i\FFCG.Generation.Reverser\Debug\netcoreapp1.1\FFCG.Generation.Reverser.pdb

@@ -1,0 +1,15 @@
+C:\Users\sophia.caspar\source\repos\CodeIsKing\FFCG.Generation.FizzBuzz\FFCG.Generation.FizzBuzz.Tests\bin\Debug\netcoreapp1.1\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+C:\Users\sophia.caspar\source\repos\CodeIsKing\FFCG.Generation.FizzBuzz\FFCG.Generation.FizzBuzz.Tests\bin\Debug\netcoreapp1.1\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+C:\Users\sophia.caspar\source\repos\CodeIsKing\FFCG.Generation.FizzBuzz\FFCG.Generation.FizzBuzz.Tests\bin\Debug\netcoreapp1.1\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+C:\Users\sophia.caspar\source\repos\CodeIsKing\FFCG.Generation.FizzBuzz\FFCG.Generation.FizzBuzz.Tests\bin\Debug\netcoreapp1.1\FFCG.Generation.FizzBuzz.Tests.deps.json
+C:\Users\sophia.caspar\source\repos\CodeIsKing\FFCG.Generation.FizzBuzz\FFCG.Generation.FizzBuzz.Tests\bin\Debug\netcoreapp1.1\FFCG.Generation.FizzBuzz.Tests.runtimeconfig.json
+C:\Users\sophia.caspar\source\repos\CodeIsKing\FFCG.Generation.FizzBuzz\FFCG.Generation.FizzBuzz.Tests\bin\Debug\netcoreapp1.1\FFCG.Generation.FizzBuzz.Tests.runtimeconfig.dev.json
+C:\Users\sophia.caspar\source\repos\CodeIsKing\FFCG.Generation.FizzBuzz\FFCG.Generation.FizzBuzz.Tests\bin\Debug\netcoreapp1.1\FFCG.Generation.FizzBuzz.Tests.dll
+C:\Users\sophia.caspar\source\repos\CodeIsKing\FFCG.Generation.FizzBuzz\FFCG.Generation.FizzBuzz.Tests\bin\Debug\netcoreapp1.1\FFCG.Generation.FizzBuzz.Tests.pdb
+C:\Users\sophia.caspar\source\repos\CodeIsKing\FFCG.Generation.FizzBuzz\FFCG.Generation.FizzBuzz.Tests\bin\Debug\netcoreapp1.1\FFCG.Generation.FizzBuzz.dll
+C:\Users\sophia.caspar\source\repos\CodeIsKing\FFCG.Generation.FizzBuzz\FFCG.Generation.FizzBuzz.Tests\bin\Debug\netcoreapp1.1\FFCG.Generation.FizzBuzz.pdb
+C:\Users\sophia.caspar\source\repos\CodeIsKing\FFCG.Generation.FizzBuzz\FFCG.Generation.FizzBuzz.Tests\obj\Debug\netcoreapp1.1\FFCG.Generation.FizzBuzz.Tests.csprojResolveAssemblyReference.cache
+C:\Users\sophia.caspar\source\repos\CodeIsKing\FFCG.Generation.FizzBuzz\FFCG.Generation.FizzBuzz.Tests\obj\Debug\netcoreapp1.1\FFCG.Generation.FizzBuzz.Tests.csproj.CoreCompileInputs.cache
+C:\Users\sophia.caspar\source\repos\CodeIsKing\FFCG.Generation.FizzBuzz\FFCG.Generation.FizzBuzz.Tests\obj\Debug\netcoreapp1.1\FFCG.Generation.FizzBuzz.Tests.AssemblyInfo.cs
+C:\Users\sophia.caspar\source\repos\CodeIsKing\FFCG.Generation.FizzBuzz\FFCG.Generation.FizzBuzz.Tests\obj\Debug\netcoreapp1.1\FFCG.Generation.FizzBuzz.Tests.dll
+C:\Users\sophia.caspar\source\repos\CodeIsKing\FFCG.Generation.FizzBuzz\FFCG.Generation.FizzBuzz.Tests\obj\Debug\netcoreapp1.1\FFCG.Generation.FizzBuzz.Tests.pdb
