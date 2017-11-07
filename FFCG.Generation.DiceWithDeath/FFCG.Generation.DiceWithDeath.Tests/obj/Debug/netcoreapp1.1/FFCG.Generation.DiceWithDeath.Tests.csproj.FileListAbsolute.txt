@@ -1,0 +1,15 @@
+C:\Users\sophia.caspar\source\repos\CodeIsKing\FFCG.Generation.DiceWithDeath\FFCG.Generation.DiceWithDeath.Tests\bin\Debug\netcoreapp1.1\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+C:\Users\sophia.caspar\source\repos\CodeIsKing\FFCG.Generation.DiceWithDeath\FFCG.Generation.DiceWithDeath.Tests\bin\Debug\netcoreapp1.1\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+C:\Users\sophia.caspar\source\repos\CodeIsKing\FFCG.Generation.DiceWithDeath\FFCG.Generation.DiceWithDeath.Tests\bin\Debug\netcoreapp1.1\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+C:\Users\sophia.caspar\source\repos\CodeIsKing\FFCG.Generation.DiceWithDeath\FFCG.Generation.DiceWithDeath.Tests\bin\Debug\netcoreapp1.1\FFCG.Generation.DiceWithDeath.Tests.deps.json
+C:\Users\sophia.caspar\source\repos\CodeIsKing\FFCG.Generation.DiceWithDeath\FFCG.Generation.DiceWithDeath.Tests\bin\Debug\netcoreapp1.1\FFCG.Generation.DiceWithDeath.Tests.runtimeconfig.json
+C:\Users\sophia.caspar\source\repos\CodeIsKing\FFCG.Generation.DiceWithDeath\FFCG.Generation.DiceWithDeath.Tests\bin\Debug\netcoreapp1.1\FFCG.Generation.DiceWithDeath.Tests.runtimeconfig.dev.json
+C:\Users\sophia.caspar\source\repos\CodeIsKing\FFCG.Generation.DiceWithDeath\FFCG.Generation.DiceWithDeath.Tests\bin\Debug\netcoreapp1.1\FFCG.Generation.DiceWithDeath.Tests.dll
+C:\Users\sophia.caspar\source\repos\CodeIsKing\FFCG.Generation.DiceWithDeath\FFCG.Generation.DiceWithDeath.Tests\bin\Debug\netcoreapp1.1\FFCG.Generation.DiceWithDeath.Tests.pdb
+C:\Users\sophia.caspar\source\repos\CodeIsKing\FFCG.Generation.DiceWithDeath\FFCG.Generation.DiceWithDeath.Tests\bin\Debug\netcoreapp1.1\FFCG.Generation.DiceWithDeath.dll
+C:\Users\sophia.caspar\source\repos\CodeIsKing\FFCG.Generation.DiceWithDeath\FFCG.Generation.DiceWithDeath.Tests\bin\Debug\netcoreapp1.1\FFCG.Generation.DiceWithDeath.pdb
+C:\Users\sophia.caspar\source\repos\CodeIsKing\FFCG.Generation.DiceWithDeath\FFCG.Generation.DiceWithDeath.Tests\obj\Debug\netcoreapp1.1\FFCG.Generation.DiceWithDeath.Tests.csprojResolveAssemblyReference.cache
+C:\Users\sophia.caspar\source\repos\CodeIsKing\FFCG.Generation.DiceWithDeath\FFCG.Generation.DiceWithDeath.Tests\obj\Debug\netcoreapp1.1\FFCG.Generation.DiceWithDeath.Tests.csproj.CoreCompileInputs.cache
+C:\Users\sophia.caspar\source\repos\CodeIsKing\FFCG.Generation.DiceWithDeath\FFCG.Generation.DiceWithDeath.Tests\obj\Debug\netcoreapp1.1\FFCG.Generation.DiceWithDeath.Tests.AssemblyInfo.cs
+C:\Users\sophia.caspar\source\repos\CodeIsKing\FFCG.Generation.DiceWithDeath\FFCG.Generation.DiceWithDeath.Tests\obj\Debug\netcoreapp1.1\FFCG.Generation.DiceWithDeath.Tests.dll
+C:\Users\sophia.caspar\source\repos\CodeIsKing\FFCG.Generation.DiceWithDeath\FFCG.Generation.DiceWithDeath.Tests\obj\Debug\netcoreapp1.1\FFCG.Generation.DiceWithDeath.Tests.pdb
