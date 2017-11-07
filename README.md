@@ -1,4 +1,4 @@
-# FFCG.Code-is-king
+﻿# FFCG.Code-is-king
 Övningsuppgifter för att lära mig c# under Code is king under första tiden som trainee på FFCG
 
 <b>1. FFCG.Generation.Calculator</b>
@@ -17,3 +17,7 @@
 - "Hello" blir "Olleh"
 - "HelLo wOrlD" blir "OllEh dLroW"
         
+<b>4. FFCG.Generation.DiceWithDeath</b>
+- Ett spel mot "Döden" som går ut på att gissa om nästa tärningskast blir högre eller lägre än det tidigare.
+- Gissar man rätt får man poäng och får försöka igen.
+- Gissar man fel tar spelet slut och poängen visas.
