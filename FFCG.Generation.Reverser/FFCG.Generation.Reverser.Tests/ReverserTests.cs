@@ -47,6 +47,5 @@ namespace FFCG.Generation.Reverser.Tests
             string result = _reverser.Reverse("hEllo WorLd");
             Assert.AreEqual("oLleh DlrOw", result);
         }
-
     }
 }

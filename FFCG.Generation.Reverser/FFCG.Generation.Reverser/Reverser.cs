@@ -20,7 +20,6 @@ namespace FFCG.Generation.Reverser
                 {
                     reversedString = SetUppercaseOnIndexLetters(reversedString, uppercaseIndex);
                 }
-
                 wordList.Add(reversedString);
             }
          
