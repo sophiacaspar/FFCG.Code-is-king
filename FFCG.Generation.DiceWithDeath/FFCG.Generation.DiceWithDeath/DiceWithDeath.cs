@@ -6,16 +6,12 @@ namespace FFCG.Generation.DiceWithDeath
     {
 
         private int score;
-
-        public int GetScore() { return score; }
-        public void SetInitialScore(int initialScore) { score = initialScore; }
-        public void IncreaseScoreByOne() { score = score + 1; }
+        private OutputStrings outputString = new OutputStrings();
+        private Dice dice = new Dice();
 
         public void InitDiceWithDeath()
         {
             SetInitialScore(0);
-            var dice = new Dice();
-            var outputString = new OutputStrings();
 
             Console.WriteLine(outputString.newGame);
             int currentDiceValue = dice.RollDice();
@@ -28,9 +24,6 @@ namespace FFCG.Generation.DiceWithDeath
 
         public void PlayDiceWithDeath(int currentDiceValue)
         {
-            var outputString = new OutputStrings();
-            var dice = new Dice();
-
             Console.WriteLine(outputString.Instructions(currentDiceValue));
 
             char inputChar = Console.ReadKey().KeyChar;
@@ -40,15 +33,13 @@ namespace FFCG.Generation.DiceWithDeath
             {
                 Console.WriteLine(outputString.newDiceRoll);
                 Console.WriteLine(outputString.RollDice(newDiceValue));
+
                 if (CheckIfGuessIsCorrect(inputChar, currentDiceValue, newDiceValue))
                 {
-                    Console.WriteLine(outputString.correctGuess);
-                    IncreaseScoreByOne();
                     PlayDiceWithDeath(newDiceValue);
                 }
                 else
                 {
-
                     GameOver();
                 }
             }
@@ -65,13 +56,16 @@ namespace FFCG.Generation.DiceWithDeath
 
         public bool CheckIfGuessIsCorrect(char guess, int currentDiceValue, int newDiceValue)
         {
-            if (guess == 'h')
+            if ((guess == 'h' && newDiceValue > currentDiceValue) || (guess == 'l' && newDiceValue < currentDiceValue))
             {
-                return (newDiceValue >= currentDiceValue);
+                Console.WriteLine(outputString.correctGuess);
+                IncreaseScoreByOne();
+                return true;
             }
-            else if (guess == 'l')
+            else if (currentDiceValue == newDiceValue)
             {
-                return (newDiceValue < currentDiceValue);
+                Console.WriteLine(outputString.equalDiceValues);
+                return true;
             }
             else
             {
@@ -79,14 +73,32 @@ namespace FFCG.Generation.DiceWithDeath
             }
         }
 
+
         public void GameOver()
         {
-            var outputString = new OutputStrings();
             int finalScore = GetScore();
             Console.WriteLine(outputString.death);
             Console.WriteLine(outputString.GameOver(finalScore));
-            Console.ReadKey();
+            CheckIfNewGame();
         }
+
+        public void CheckIfNewGame()
+        {
+            Console.WriteLine(outputString.playAgain);
+            char inputChar = Console.ReadKey().KeyChar;
+            if (inputChar == 'y')
+            {
+                InitDiceWithDeath();
+            }
+            else
+            {
+                return;
+            }
+        }
+
+        public int GetScore() { return score; }
+        public void SetInitialScore(int initialScore) { score = initialScore; }
+        public void IncreaseScoreByOne() { score = score + 1; }
     }
 
     public class Dice

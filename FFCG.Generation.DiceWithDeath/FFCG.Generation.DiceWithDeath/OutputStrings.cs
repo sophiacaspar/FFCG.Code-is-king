@@ -13,10 +13,13 @@ namespace FFCG.Generation.DiceWithDeath
                                 "************************************************************************************************************\n";
         public string yourDiceRoll = "This is your current dice roll: \n";
         public string newDiceRoll = "\nThe new dice roll was: \n";
+        public string equalDiceValues = "Well, this is awkward...\nYou didn't guess right, nor were you wrong. The dice rolled the same value as the previous roll.\n" +
+                                        "Your life will be spared, but your score remains the same. You may guess again.\n";
         public string correctGuess = "Congratulations! Your guess was correct! Well done!\n" +
                                     "Your score is increased by one.\n" +
                                     "Now you get to guess again!\n";
         public string wrongInput = "Wrong input, try again by only typing either the letter h or the letter l";
+        public string playAgain = "\nDo you want to play again? \nType y for yes, otherwise type any key to quit\n";
         public string death = 
                                 "              ...\n" +
                                 "             ;::::;\n" +
