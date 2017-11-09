@@ -19,5 +19,6 @@
         
 <b>4. FFCG.Generation.DiceWithDeath</b>
 - Ett spel mot "Döden" som går ut på att gissa om nästa tärningskast blir högre eller lägre än det tidigare.
+- Om nästa tärningskast får samma värde som innan får man testa igen. Inget poäng ges.
 - Gissar man rätt får man poäng och får försöka igen.
 - Gissar man fel tar spelet slut och poängen visas.
