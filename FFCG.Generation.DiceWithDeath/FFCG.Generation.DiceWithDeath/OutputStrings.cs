@@ -66,7 +66,10 @@ namespace FFCG.Generation.DiceWithDeath
             else if (diceValue == 4) { return "________\n| o   o |\n|       |\n| o   o |\n|_______|\n"; }
             else if (diceValue == 5) { return "________\n| o   o |\n|   o   |\n| o   o |\n|_______|\n"; }
             else if (diceValue == 6) { return "________\n| o   o |\n| o   o |\n| o   o |\n|_______|\n"; }
-            else { return ""; }
+            else if (diceValue == 7) { return "________\n| o   o |\n| o o o |\n| o   o |\n|_______|\n"; }
+            else if (diceValue == 8) { return "________\n| o o o |\n| o   o |\n| o o o |\n|_______|\n"; }
+            else if (diceValue == 9) { return "________\n| o o o |\n| o o o |\n| o o o |\n|_______|\n"; }
+            else                    { return $"________\n|       |\n|  {diceValue}   |\n|       |\n|_______|\n"; }
 
         }
     }
