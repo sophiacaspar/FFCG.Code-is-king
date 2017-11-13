@@ -7,11 +7,9 @@ namespace FFCG.Generation.DiceWithDeath.Host
         static void Main(string[] args)
         {
             var dwd = new DiceWithDeath();
+            int numberOfSidesOnDice = 6;
+            dwd.InitDiceWithDeath(numberOfSidesOnDice);
 
-            dwd.InitDiceWithDeath();
-
-
-            //Console.ReadKey();
         }
     }
 }
