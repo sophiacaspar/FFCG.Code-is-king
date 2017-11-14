@@ -18,7 +18,7 @@ namespace FFCG.Generation.DiceWithDeath
         public string correctGuess = "Congratulations! Your guess was correct! Well done!\n" +
                                     "Your score is increased by one.\n" +
                                     "Now you get to guess again!\n";
-        public string wrongInput = "Wrong input, try again by only typing either the letter h or the letter l";
+        public string wrongInput = "\nWrong input, try again by only typing either the letter h or the letter l";
         public string playAgain = "\nDo you want to play again? \nType y for yes, otherwise type any key to quit\n";
         public string death = 
                                 "              ...\n" +
