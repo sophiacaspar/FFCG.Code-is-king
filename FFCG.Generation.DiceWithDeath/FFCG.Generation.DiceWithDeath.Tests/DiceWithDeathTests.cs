@@ -27,6 +27,7 @@ namespace FFCG.Generation.DiceWithDeath.Tests
         [TestMethod]
         public void Rolled_dice_result_should_be_six()
         {
+            _dice.NumberOfSidesOnDice = 6;
             int rolledDiceResult = _dice.RollDice(123);
             Assert.AreEqual(6, rolledDiceResult);
         }
@@ -34,6 +35,7 @@ namespace FFCG.Generation.DiceWithDeath.Tests
         [TestMethod]
         public void Should_guess_higher_and_be_right()
         {
+            _dice.NumberOfSidesOnDice = 6;
             int currentDiceValue = _dice.RollDice(321);
             int newDiceValue = _dice.RollDice(123);
             char newGuess = 'h';
@@ -44,6 +46,7 @@ namespace FFCG.Generation.DiceWithDeath.Tests
         [TestMethod]
         public void Should_guess_lower_and_be_wrong()
         {
+            _dice.NumberOfSidesOnDice = 6;
             int currentDiceValue = _dice.RollDice(321);
             int newDiceValue = _dice.RollDice(123);
             char newGuess = 'l';
@@ -54,6 +57,7 @@ namespace FFCG.Generation.DiceWithDeath.Tests
         [TestMethod]
         public void Should_guess_higher_and_be_right_with_same_values_on_dices()
         {
+            _dice.NumberOfSidesOnDice = 6;
             int currentDiceValue = _dice.RollDice(321);
             int newDiceValue = _dice.RollDice(321);
             char newGuess = 'h';
@@ -64,6 +68,7 @@ namespace FFCG.Generation.DiceWithDeath.Tests
         [TestMethod]
         public void Right_guess_should_increase_score_by_one()
         {
+            _dice.NumberOfSidesOnDice = 6;
             int oldScore = 4;
             _diceWithDeath.SetInitialScore(oldScore);
             int currentDiceValue = _dice.RollDice(321);
@@ -77,6 +82,7 @@ namespace FFCG.Generation.DiceWithDeath.Tests
         [TestMethod]
         public void Guess_where_both_dice_values_are_equal_should_keep_same_score()
         {
+            _dice.NumberOfSidesOnDice = 6;
             int oldScore = 4;
             _diceWithDeath.SetInitialScore(oldScore);
             int currentDiceValue = _dice.RollDice(123);
