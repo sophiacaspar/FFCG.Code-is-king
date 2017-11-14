@@ -1,8 +1,0 @@
-C:\Users\sophia.caspar\source\repos\CodeIsKing\FFCG.Generation.DiceWithDeath\FFCG.Generation.DiceWithDeath\bin\Debug\netcoreapp1.1\FFCG.Generation.DiceWithDeath.deps.json
-C:\Users\sophia.caspar\source\repos\CodeIsKing\FFCG.Generation.DiceWithDeath\FFCG.Generation.DiceWithDeath\bin\Debug\netcoreapp1.1\FFCG.Generation.DiceWithDeath.dll
-C:\Users\sophia.caspar\source\repos\CodeIsKing\FFCG.Generation.DiceWithDeath\FFCG.Generation.DiceWithDeath\bin\Debug\netcoreapp1.1\FFCG.Generation.DiceWithDeath.pdb
-C:\Users\sophia.caspar\source\repos\CodeIsKing\FFCG.Generation.DiceWithDeath\FFCG.Generation.DiceWithDeath\obj\Debug\netcoreapp1.1\FFCG.Generation.DiceWithDeath.csprojResolveAssemblyReference.cache
-C:\Users\sophia.caspar\source\repos\CodeIsKing\FFCG.Generation.DiceWithDeath\FFCG.Generation.DiceWithDeath\obj\Debug\netcoreapp1.1\FFCG.Generation.DiceWithDeath.csproj.CoreCompileInputs.cache
-C:\Users\sophia.caspar\source\repos\CodeIsKing\FFCG.Generation.DiceWithDeath\FFCG.Generation.DiceWithDeath\obj\Debug\netcoreapp1.1\FFCG.Generation.DiceWithDeath.AssemblyInfo.cs
-C:\Users\sophia.caspar\source\repos\CodeIsKing\FFCG.Generation.DiceWithDeath\FFCG.Generation.DiceWithDeath\obj\Debug\netcoreapp1.1\FFCG.Generation.DiceWithDeath.dll
-C:\Users\sophia.caspar\source\repos\CodeIsKing\FFCG.Generation.DiceWithDeath\FFCG.Generation.DiceWithDeath\obj\Debug\netcoreapp1.1\FFCG.Generation.DiceWithDeath.pdb

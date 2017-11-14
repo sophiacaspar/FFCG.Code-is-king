@@ -1,8 +1,0 @@
-C:\Users\sophia.caspar\source\repos\CodeIsKing\FFCG.Generation.Calculator\FFCG.Generation.Calculator\bin\Debug\netcoreapp1.1\FFCG.Generation.Calculator.deps.json
-C:\Users\sophia.caspar\source\repos\CodeIsKing\FFCG.Generation.Calculator\FFCG.Generation.Calculator\bin\Debug\netcoreapp1.1\FFCG.Generation.Calculator.dll
-C:\Users\sophia.caspar\source\repos\CodeIsKing\FFCG.Generation.Calculator\FFCG.Generation.Calculator\bin\Debug\netcoreapp1.1\FFCG.Generation.Calculator.pdb
-C:\Users\sophia.caspar\source\repos\CodeIsKing\FFCG.Generation.Calculator\FFCG.Generation.Calculator\obj\Debug\netcoreapp1.1\FFCG.Generation.Calculator.csprojResolveAssemblyReference.cache
-C:\Users\sophia.caspar\source\repos\CodeIsKing\FFCG.Generation.Calculator\FFCG.Generation.Calculator\obj\Debug\netcoreapp1.1\FFCG.Generation.Calculator.csproj.CoreCompileInputs.cache
-C:\Users\sophia.caspar\source\repos\CodeIsKing\FFCG.Generation.Calculator\FFCG.Generation.Calculator\obj\Debug\netcoreapp1.1\FFCG.Generation.Calculator.AssemblyInfo.cs
-C:\Users\sophia.caspar\source\repos\CodeIsKing\FFCG.Generation.Calculator\FFCG.Generation.Calculator\obj\Debug\netcoreapp1.1\FFCG.Generation.Calculator.dll
-C:\Users\sophia.caspar\source\repos\CodeIsKing\FFCG.Generation.Calculator\FFCG.Generation.Calculator\obj\Debug\netcoreapp1.1\FFCG.Generation.Calculator.pdb
