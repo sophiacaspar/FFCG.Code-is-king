@@ -102,6 +102,9 @@ namespace FFCG.Generation.DiceWithDeath
         public void IncreaseScoreByOne() { score = score + 1; }
     }
 
+    public class Score { 
+}
+
     public class Dice
     {
         private int numberOfSidesOnDice;
