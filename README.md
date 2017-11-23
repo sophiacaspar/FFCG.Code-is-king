@@ -22,3 +22,10 @@
 - Om nästa tärningskast får samma värde som innan får man testa igen. Inget poäng ges.
 - Gissar man rätt får man poäng och får försöka igen.
 - Gissar man fel tar spelet slut och poängen visas.
+
+<b> FFCG.Generation.Meteorolog </b>
+En applikation som kan analysera en datamänd från en fil på disk och presenterar följande saker:
+- Datum,klockslag och temperatur för första gången det rapporterades att det var minusgrader
+- Datum, klockslag och temperatur för den kallaste temperaturen
+- Datum, klockslag och temperatur för den varmaste temperaturen
+- Ett snitt för hur temperaturen varit, per dag, för de dagar som finns med i den data som ni ska jobba med
