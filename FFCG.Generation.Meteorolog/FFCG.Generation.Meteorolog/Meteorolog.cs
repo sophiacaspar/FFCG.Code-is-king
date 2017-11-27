@@ -12,36 +12,39 @@ namespace FFCG.Generation.Meteorolog
 
     public class FileReader
     {
+        private UnixTimestampConverter _unixTimestampConverter = new UnixTimestampConverter();
         private string _pathToFile;
         private List<DailyValues> _dailyValues = new List<DailyValues>();
-
-        private class DailyValues
-        {
-            public long epochTimestamp { get; set; }
-            public float temperature { get; set; }
-
-            public static DailyValues FromCsv(string csvLine)
-            {
-                string[] values = csvLine.Split(';');
-                DailyValues dailyValues = new DailyValues();
-                dailyValues.epochTimestamp = Convert.ToInt32(values[0].Trim('"'));
-                dailyValues.temperature = float.Parse(values[1].Trim('"'), CultureInfo.InvariantCulture.NumberFormat);
-                Console.WriteLine(dailyValues.epochTimestamp + " " + dailyValues.temperature );
-                return dailyValues;
-            }
-        }
 
         public FileReader(string pathToFile)
         {
             _pathToFile = pathToFile;
         }
 
+        private class DailyValues
+        {
+            public string Date { get; set; }
+            public string Time { get; set; }
+            public float Temperature { get; set; }
+        }
+
         public void ReadFile()
         {
-            List<DailyValues> values = File.ReadAllLines(_pathToFile)
-                                           .Skip(1)
-                                           .Select(v => DailyValues.FromCsv(v))
-                                           .ToList();
+            var csvLines = File.ReadAllLines(_pathToFile).Skip(1);
+            foreach (var csvLine in csvLines)
+            {
+                string[] values = csvLine.Split(';');
+                var unixTimestamp = Convert.ToInt32(values[0].Trim('"'));
+
+                DailyValues dailyValues = new DailyValues
+                {
+                    Date = _unixTimestampConverter.GetDateFromTimestamp(unixTimestamp),
+                    Time = _unixTimestampConverter.GetTimeFromTimestamp(unixTimestamp),
+                    Temperature = float.Parse(values[1].Trim('"'), CultureInfo.InvariantCulture.NumberFormat)
+                };
+                _dailyValues.Add(dailyValues);
+            }
+                                           
         }
     }
 }
