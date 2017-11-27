@@ -8,14 +8,23 @@ namespace FFCG.Generation.Meteorolog
 {
     public class Meteorolog
     {
-        public void GetFirstOccurrenceOfBelowZero()
-        {
+        private float _temperature;
 
+        public void PresentDailyValues(List<DailyValues> dailyValues)
+        {
+            DailyValues firstBelowZero = GetFirstOccurrenceOfBelowZero(dailyValues);
+            Console.WriteLine($"{firstBelowZero.Date} {firstBelowZero.Time} {firstBelowZero.Temperature}");
         }
 
-        public void GetTheColdestOccurrence()
+        public DailyValues GetFirstOccurrenceOfBelowZero(List<DailyValues> dailyValues)
         {
+            DailyValues firstBelowZero = dailyValues.FirstOrDefault(t => t.Temperature<0);
+            return firstBelowZero;
+        }
 
+        public void GetTheColdestOccurrence(List<DailyValues> dailyValues)
+        {
+            //float coldestData = dailyValues.Min(t => t.Temperature);
         }
 
         public void GetTheWarmestOccurrence()
@@ -34,17 +43,11 @@ namespace FFCG.Generation.Meteorolog
         private UnixTimestampConverter _unixTimestampConverter = new UnixTimestampConverter();
         private string _pathToFile;
         private List<DailyValues> _dailyValues = new List<DailyValues>();
+        private Meteorolog _meteorolog = new Meteorolog();
 
         public FileReader(string pathToFile)
         {
             _pathToFile = pathToFile;
-        }
-
-        private class DailyValues
-        {
-            public string Date { get; set; }
-            public string Time { get; set; }
-            public float Temperature { get; set; }
         }
 
         public void ReadFile()
@@ -55,15 +58,27 @@ namespace FFCG.Generation.Meteorolog
                 string[] values = csvLine.Split(';');
                 var unixTimestamp = Convert.ToInt32(values[0].Trim('"'));
 
-                DailyValues dailyValues = new DailyValues
+                DailyValues dailyvalues = new DailyValues
                 {
                     Date = _unixTimestampConverter.GetDateFromTimestamp(unixTimestamp),
                     Time = _unixTimestampConverter.GetTimeFromTimestamp(unixTimestamp),
                     Temperature = float.Parse(values[1].Trim('"'), CultureInfo.InvariantCulture.NumberFormat)
                 };
-                _dailyValues.Add(dailyValues);
+                _dailyValues.Add(dailyvalues);
             }
                                            
         }
+
+        public void PresentDailyValues()
+        {
+            _meteorolog.PresentDailyValues(_dailyValues);
+        }
+    }
+
+    public class DailyValues
+    {
+        public string Date { get; set; }
+        public string Time { get; set; }
+        public float Temperature { get; set; }
     }
 }
