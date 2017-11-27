@@ -8,6 +8,25 @@ namespace FFCG.Generation.Meteorolog
 {
     public class Meteorolog
     {
+        public void GetFirstOccurrenceOfBelowZero()
+        {
+
+        }
+
+        public void GetTheColdestOccurrence()
+        {
+
+        }
+
+        public void GetTheWarmestOccurrence()
+        {
+
+        }
+
+        public void GetAverageTemperaturePerDay()
+        {
+
+        }
     }
 
     public class FileReader
