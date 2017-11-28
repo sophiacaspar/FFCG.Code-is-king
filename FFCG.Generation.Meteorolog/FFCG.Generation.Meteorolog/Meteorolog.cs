@@ -25,20 +25,22 @@ namespace FFCG.Generation.Meteorolog
         public DailyValues GetColdestOccurrence(List<DailyValues> dailyValues)
         {
             float coldestTemperature = dailyValues.Min(t => t.Temperature);
-            List<DailyValues> coldestData = dailyValues.Where(dailyvalue=> dailyvalue.Temperature == coldestTemperature).ToList();
+            var coldestData = dailyValues.Where(dailyvalue=> dailyvalue.Temperature == coldestTemperature).ToList();
             return coldestData[0];
         }
 
         public DailyValues GetWarmestOccurrence(List<DailyValues> dailyValues)
         {
             float warmestTemperature = dailyValues.Max(t => t.Temperature);
-            List<DailyValues> coldestData = dailyValues.Where(dailyvalue => dailyvalue.Temperature == warmestTemperature).ToList();
+            var coldestData = dailyValues.Where(dailyvalue => dailyvalue.Temperature == warmestTemperature).ToList();
             return coldestData[0];
         }
 
-        public void GetAverageTemperaturePerDay()
+        public List<DailyValues> GetAverageTemperaturePerDay(List<DailyValues> dailyValues)
         {
-
+            var average = dailyValues.GroupBy(dailyValue => dailyValue.Date, dailyValue => dailyValue.Temperature,
+                            (date, temp) => new DailyValues { Date = date, Temperature = temp.Average() }).ToList();
+            return average;
         }
     }
 
