@@ -1,6 +1,7 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Collections.Generic;
 using System.Globalization;
+using FFCG.Generation.Meteorolog.Host.Presenters;
 
 /**
  * 
@@ -16,14 +17,20 @@ namespace FFCG.Generation.Meteorolog.Tests
     [TestClass]
     public class MeteorologTests
     {
-        private Meteorolog _meteorolog;
         private UnixTimestampConverter _unixTimestampConverter;
         private List<DailyValues> _dailyValues;
+        private PresentFirstOccurenceBelowZero _presentFirstOccurrenceBelowZero;
+        private PresentColdestOccurrence _presentColdestOccurrence;
+        private PresentWarmestOccurrence _presentWarmestOccurrence;
+        private PresentAverageTemperature _presentAverageTemperature;
 
         [TestInitialize]
         public void SetUp()
         {
-            _meteorolog = new Meteorolog();
+            _presentFirstOccurrenceBelowZero = new PresentFirstOccurenceBelowZero();
+            _presentColdestOccurrence = new PresentColdestOccurrence();
+            _presentWarmestOccurrence = new PresentWarmestOccurrence();
+            _presentAverageTemperature = new PresentAverageTemperature();
             _unixTimestampConverter = new UnixTimestampConverter();
             _dailyValues = new List<DailyValues>();
 
@@ -77,7 +84,7 @@ namespace FFCG.Generation.Meteorolog.Tests
         [TestMethod]
         public void Should_get_the_first_occurrence_below_zero()
         {
-            DailyValues firstBelowZero = _meteorolog.GetFirstOccurrenceOfBelowZero(_dailyValues);
+            DailyValues firstBelowZero = _presentFirstOccurrenceBelowZero.GetFirstOccurrenceOfBelowZero(_dailyValues);
             float temperature = float.Parse("-0.1", CultureInfo.InvariantCulture.NumberFormat);
             Assert.AreEqual(temperature, firstBelowZero.Temperature);
         }
@@ -85,7 +92,7 @@ namespace FFCG.Generation.Meteorolog.Tests
         [TestMethod]
         public void Should_get_the_coldest_temperature()
         {
-            DailyValues coldest = _meteorolog.GetColdestOccurrence(_dailyValues);
+            DailyValues coldest = _presentColdestOccurrence.GetColdestOccurrence(_dailyValues);
             float temperature = float.Parse("-3.7", CultureInfo.InvariantCulture.NumberFormat);
             Assert.AreEqual(temperature, coldest.Temperature);
         }
@@ -93,7 +100,7 @@ namespace FFCG.Generation.Meteorolog.Tests
         [TestMethod]
         public void Should_get_the_warmest_temperature()
         {
-            DailyValues warmest = _meteorolog.GetWarmestOccurrence(_dailyValues);
+            DailyValues warmest = _presentWarmestOccurrence.GetWarmestOccurrence(_dailyValues);
             float temperature = float.Parse("3.2", CultureInfo.InvariantCulture.NumberFormat);
             Assert.AreEqual(temperature, warmest.Temperature);
         }
@@ -101,7 +108,7 @@ namespace FFCG.Generation.Meteorolog.Tests
         [TestMethod]
         public void Should_get_the_average_temperature_per_day()
         {
-            var average = _meteorolog.GetAverageTemperaturePerDay(_dailyValues);
+            var average = _presentAverageTemperature.GetAverageTemperaturePerDay(_dailyValues);
             float temp1 = float.Parse("3.2", CultureInfo.InvariantCulture.NumberFormat);
             float temp2 = float.Parse("-0.1", CultureInfo.InvariantCulture.NumberFormat);
             float averageTemp1 = (temp1 + temp2) / 2;

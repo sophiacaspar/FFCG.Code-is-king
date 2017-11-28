@@ -13,6 +13,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\FFCG.Generation.Meteorolog.Host\FFCG.Generation.Meteorolog.Host.csproj" />
     <ProjectReference Include="..\FFCG.Generation.Meteorolog\FFCG.Generation.Meteorolog.csproj" />
   </ItemGroup>
 
