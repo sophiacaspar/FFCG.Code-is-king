@@ -6,12 +6,14 @@ namespace FFCG.Generation.Meteorolog
 {
     public class Meteorolog
     {
-        private float _temperature;
 
         public void PresentDailyValues(List<DailyValues> dailyValues)
         {
             DailyValues firstBelowZero = GetFirstOccurrenceOfBelowZero(dailyValues);
             Console.WriteLine($"{firstBelowZero.Date} {firstBelowZero.Time} {firstBelowZero.Temperature}");
+            DailyValues coldestOccurrence = GetColdestOccurrence(dailyValues);
+            DailyValues warmestOccurrence = GetWarmestOccurrence(dailyValues);
+            Console.WriteLine($"{warmestOccurrence.Date} {warmestOccurrence.Time} {warmestOccurrence.Temperature}");
         }
 
         public DailyValues GetFirstOccurrenceOfBelowZero(List<DailyValues> dailyValues)
@@ -20,14 +22,18 @@ namespace FFCG.Generation.Meteorolog
             return firstBelowZero;
         }
 
-        public void GetTheColdestOccurrence(List<DailyValues> dailyValues)
+        public DailyValues GetColdestOccurrence(List<DailyValues> dailyValues)
         {
-            //float coldestData = dailyValues.Min(t => t.Temperature);
+            float coldestTemperature = dailyValues.Min(t => t.Temperature);
+            List<DailyValues> coldestData = dailyValues.Where(dailyvalue=> dailyvalue.Temperature == coldestTemperature).ToList();
+            return coldestData[0];
         }
 
-        public void GetTheWarmestOccurrence()
+        public DailyValues GetWarmestOccurrence(List<DailyValues> dailyValues)
         {
-
+            float warmestTemperature = dailyValues.Max(t => t.Temperature);
+            List<DailyValues> coldestData = dailyValues.Where(dailyvalue => dailyvalue.Temperature == warmestTemperature).ToList();
+            return coldestData[0];
         }
 
         public void GetAverageTemperaturePerDay()

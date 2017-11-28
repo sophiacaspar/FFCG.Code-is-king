@@ -1,4 +1,6 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System.Collections.Generic;
+using System.Globalization;
 
 /**
  * 
@@ -16,12 +18,42 @@ namespace FFCG.Generation.Meteorolog.Tests
     {
         private Meteorolog _meteorolog;
         private UnixTimestampConverter _unixTimestampConverter;
+        private List<DailyValues> _dailyValues;
 
         [TestInitialize]
         public void SetUp()
         {
             _meteorolog = new Meteorolog();
             _unixTimestampConverter = new UnixTimestampConverter();
+            _dailyValues = new List<DailyValues>();
+
+            /////////////////////////////////////////////
+            DailyValues _dailyvalues1 = new DailyValues
+            {
+                Date = "2017-11-27",
+                Time = "10:00:00",
+                Temperature = float.Parse("3.2", CultureInfo.InvariantCulture.NumberFormat)
+            };
+            _dailyValues.Add(_dailyvalues1);
+
+            DailyValues _dailyvalues2 = new DailyValues
+            {
+                Date = "2017-11-27",
+                Time = "21:30:00",
+                Temperature = float.Parse("-0.1", CultureInfo.InvariantCulture.NumberFormat)
+            };
+            _dailyValues.Add(_dailyvalues2);
+
+            DailyValues _dailyvalues3 = new DailyValues
+            {
+                Date = "2017-11-28",
+                Time = "12:15:00",
+                Temperature = float.Parse("7.1", CultureInfo.InvariantCulture.NumberFormat)
+            };
+            _dailyValues.Add(_dailyvalues3);
+
+            //////////////////////////////////////////////
+
         }
 
         [TestMethod]
