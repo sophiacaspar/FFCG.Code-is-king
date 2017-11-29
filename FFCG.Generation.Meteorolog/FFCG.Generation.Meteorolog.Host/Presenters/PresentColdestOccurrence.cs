@@ -16,9 +16,9 @@ namespace FFCG.Generation.Meteorolog.Host.Presenters
 
         public DailyValues GetColdestOccurrence(List<DailyValues> dailyValues)
         {
-            float coldestTemperature = dailyValues.Min(t => t.Temperature);
-            var coldestData = dailyValues.Where(dailyvalue => dailyvalue.Temperature == coldestTemperature).ToList();
-            return coldestData[0];
+                float coldestTemperature = dailyValues.Min(t => t.Temperature);
+                var coldestData = dailyValues.Where(dailyvalue => dailyvalue.Temperature == coldestTemperature).ToList();
+                return coldestData[0];
         }
     }
 }
