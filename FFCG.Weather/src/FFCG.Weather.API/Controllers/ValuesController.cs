@@ -19,8 +19,35 @@ namespace FFCG.Weather.API.Controllers
             var stations = JsonConvert.DeserializeObject<List<WeatherStation>>(json);
             return stations;
         }
-    }
+/*
+        [HttpGet]
+        public List<WeatherStation> Get()
+        {
+            //This is a prime candidate for refactoring later...
+            var connectionString =
+                "Server=(LocalDb)\\MSSQLLocalDB;Initial Catalog=GenerationWeather;Integrated Security=SSPI;Trusted_Connection=yes;";
+            var connection = new SqlConnection(connectionString);
+            connection.Open();
 
+            var command = connection.CreateCommand();
+            command.CommandText = "SELECT * FROM Stations";
+            var reader = command.ExecuteReader();
+
+            var results = new List<WeatherStation>();
+            while (reader.Read())
+            {
+                var weatherStation = MapToModel(reader);
+
+                results.Add(weatherStation);
+            }
+
+            return results;
+        }
+
+        [HttpGet"{id}"]
+        public WeatherStation Get()
+    }
+    */
 
     [Route("api/[controller]")]
     public class ValuesController : Controller

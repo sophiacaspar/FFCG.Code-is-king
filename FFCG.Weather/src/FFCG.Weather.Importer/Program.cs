@@ -3,6 +3,8 @@ using System.Net.Http;
 using Newtonsoft.Json;
 using System.Collections.Generic;
 using FFCG.Weather.Models;
+using System.Data.SqlClient;
+using System;
 
 namespace FFCG.Weather.Importer
 {
@@ -30,8 +32,30 @@ namespace FFCG.Weather.Importer
                 weatherStations.Add(weatherStation);
             }
 
-            StoreInLocalTextFile(weatherStations);
+            //StoreInLocalTextFile(weatherStations);
+            StoreInLocalDatabase(weatherStations);
 
+        }
+
+        public static void StoreInLocalDatabase(List<WeatherStation> weatherStations)
+        {
+            var connectionString =
+                "Server=(LocalDb)\\MSSQLLocalDB;Initial Catalog=CodeIsKingWeather;Integrated Security=SSPI;Trusted_Connection=yes;";
+            var connection = new SqlConnection(connectionString);
+            connection.Open();
+            int i = 0;
+
+            foreach (var station in weatherStations)
+            {
+                var command = connection.CreateCommand();
+                command.CommandText = $"INSERT INTO Stations VALUES ('{station.Id}', '{station.Name}', {station.Longitude.ToString().Replace(",", ".")}, {station.Latitude.ToString().Replace(",", ".")}, {station.Altitude.ToString().Replace(",", ".")});";
+
+                command.ExecuteNonQuery();
+                i++;
+                var progress = (decimal)i / weatherStations.Count;
+
+                Console.Write($"\r{progress:P}");
+            }
         }
 
         public static void StoreInLocalTextFile(List<WeatherStation> weatherStations)
