@@ -9,9 +9,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FFCG.Weather.Models", "FFCG
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FFCG.Weather.API", "FFCG.Weather.API\FFCG.Weather.API.csproj", "{5E3F7475-4DDF-4B9A-9D37-F0B78E0D684C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FFCG.Weather.Data", "FFCG.Weather.Data\FFCG.Weather.Data.csproj", "{00F73099-39F7-4AC5-A6F7-971D71AB20AC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FFCG.Weather.Data", "FFCG.Weather.Data\FFCG.Weather.Data.csproj", "{00F73099-39F7-4AC5-A6F7-971D71AB20AC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FFCG.Weather.Data.Tools", "FFCG.Weather.Data.Tools\FFCG.Weather.Data.Tools.csproj", "{60C37D22-463B-4ED4-9756-B182644F0825}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FFCG.Weather.Data.Tools", "FFCG.Weather.Data.Tools\FFCG.Weather.Data.Tools.csproj", "{60C37D22-463B-4ED4-9756-B182644F0825}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FFCG.Weather.Data2", "FFCG.Weather.Data2\FFCG.Weather.Data2.csproj", "{88C4D49B-7437-4689-AD5B-14F3BB29685C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{60C37D22-463B-4ED4-9756-B182644F0825}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{60C37D22-463B-4ED4-9756-B182644F0825}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{60C37D22-463B-4ED4-9756-B182644F0825}.Release|Any CPU.Build.0 = Release|Any CPU
+		{88C4D49B-7437-4689-AD5B-14F3BB29685C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{88C4D49B-7437-4689-AD5B-14F3BB29685C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{88C4D49B-7437-4689-AD5B-14F3BB29685C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{88C4D49B-7437-4689-AD5B-14F3BB29685C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
