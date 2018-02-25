@@ -13,7 +13,7 @@ namespace FFCG.Weather.Data
         {
             // TODO: Change location of connection string
             optionsBuilder.UseSqlServer(
-                "Server=(LocalDb)\\MSSQLLocalDB;Initial Catalog=CodeIsKingWeather;Integrated Security=SSPI;Trusted_Connection=yes;");
+                "Server=(LocalDb)\\MSSQLLocalDB;Initial Catalog=CodeIsKingWeather.EF;Integrated Security=SSPI;Trusted_Connection=yes;");
         }
 
         public DbSet<WeatherStation> Stations { get; set; }
