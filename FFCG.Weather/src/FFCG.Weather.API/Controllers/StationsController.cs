@@ -1,7 +1,6 @@
 ﻿
 using System.Collections.Generic;
 using System.Linq;
-using FFCG.Weather.Data;
 using FFCG.Weather.Models;
 using Microsoft.AspNetCore.Mvc;
 
@@ -11,22 +10,24 @@ namespace FFCG.Weather.API.Controllers
     [Route("api/[controller]")]
     public class StationsController : Controller
     {
+
+        private readonly IWeatherStationRepository _repository;
+
+        public StationsController(IWeatherStationRepository repository)
+        {
+            _repository = repository;
+        }
+
         [HttpGet]
         public List<WeatherStation> Get()
         {
-            using (var db = new WeatherContext())
-            {
-                return db.Stations.ToList();
-            }
+            return _repository.All().OrderBy(x => x.Name).ToList();
         }
 
         [HttpGet("{id}")]
         public WeatherStation Get(string id)
         {
-            using (var db = new WeatherContext())
-            {
-                return db.Stations.FirstOrDefault(x => x.Id == id);
-            }
+            return _repository.Load(id);
         }
     }
 }

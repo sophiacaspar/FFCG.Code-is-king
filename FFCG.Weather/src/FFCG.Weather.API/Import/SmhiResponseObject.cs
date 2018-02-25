@@ -1,5 +1,4 @@
-﻿
-namespace FFCG.Weather.Importer
+﻿namespace FFCG.Weather.API.Import
 {
     public class SmhiResponseObject
     {

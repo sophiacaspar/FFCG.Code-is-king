@@ -1,6 +1,4 @@
-﻿
-
-namespace FFCG.Weather.Importer
+﻿namespace FFCG.Weather.API.Import
 {
     public class Station
     {
@@ -9,6 +7,5 @@ namespace FFCG.Weather.Importer
         public float height { get; set; }
         public float latitude { get; set; }
         public float longitude { get; set; }
-
     }
 }
