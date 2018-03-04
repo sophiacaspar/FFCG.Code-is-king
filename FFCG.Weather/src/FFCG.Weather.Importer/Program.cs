@@ -2,8 +2,6 @@
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.IO;
-using System.Net.Http;
-using FFCG.Weather.Data;
 using FFCG.Weather.Models;
 using Newtonsoft.Json;
 

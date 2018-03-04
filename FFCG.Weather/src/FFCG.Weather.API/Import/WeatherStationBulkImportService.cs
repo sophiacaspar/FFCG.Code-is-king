@@ -2,31 +2,26 @@
 using System.Collections.Generic;
 using FFCG.Weather.Models;
 using FFCG.Weather.API.Data;
-using FFCG.Weather.API.Import;
-using Microsoft.AspNetCore.Mvc;
 using System.Net.Http;
 using Newtonsoft.Json;
 
-namespace FFCG.Weather.API.Repositories
+namespace FFCG.Weather.API.Import
 {
-    public class WeatherStationBulkImportRepository : IWeatherStationBulkImportRepository
+    public class WeatherStationBulkImportService : IWeatherStationBulkImportService
     {
         private readonly WeatherContext _db;
+        private readonly IAppSettings _appSettings;
 
-        public WeatherStationBulkImportRepository(WeatherContext db)
+        public WeatherStationBulkImportService(WeatherContext db, IAppSettings appSettings)
         {
             _db = db;
+            _appSettings = appSettings;
         }
-        public void ImportAll(string path)
-        {
-            _db.AddRange(GetAllWeatherStations(path));
-            _db.SaveChanges();
-        }
-
-        private List<WeatherStation> GetAllWeatherStations(string path)
+        public void SaveAllWeatherStations()
         {
             var httpClient = new HttpClient();
-            var response = httpClient.GetStringAsync(path).Result;
+            var apiPath = _appSettings.Get("ApiImportConnections", "SmhiStations");
+            var response = httpClient.GetStringAsync(apiPath).Result;
             var root = JsonConvert.DeserializeObject<SmhiResponseObject>(response);
 
             var weatherStations = new List<WeatherStation>();
@@ -44,7 +39,9 @@ namespace FFCG.Weather.API.Repositories
 
                 weatherStations.Add(weatherStation);
             }
-            return weatherStations;
+
+            _db.AddRange(weatherStations);
+            _db.SaveChanges();
         }
     }
 }
