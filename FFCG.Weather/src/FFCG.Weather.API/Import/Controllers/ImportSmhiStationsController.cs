@@ -1,25 +1,47 @@
-﻿using FFCG.Weather.Models;
+﻿using FFCG.Weather.API.Data;
+using FFCG.Weather.Models;
 using Microsoft.AspNetCore.Mvc;
-
-// For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace FFCG.Weather.API.Import.Controllers
 {
     [Route("api/import/smhi/stations")]
     public class ImportSmhiStationsController : ControllerBase
     {
-        private readonly IWeatherStationBulkImportService _service;
-        private readonly string _path;
+        private readonly IStationsDownloader _stationsDownloader;
+        private readonly WeatherContext _db;
 
-        public ImportSmhiStationsController(IWeatherStationBulkImportService service)
+        public ImportSmhiStationsController(WeatherContext db, IStationsDownloader stationsDownloader)
         {
-            _service = service;
+            _db = db;
+            _stationsDownloader = stationsDownloader;
         }
 
         [HttpPost]
-        public IActionResult Post()
+        public async Task<IActionResult> Post()
         {
-            _service.SaveAllWeatherStations();
+            var root = await _stationsDownloader.Download();
+
+            var weatherStations = new List<WeatherStation>();
+
+            foreach (var station in root.station)
+            {
+                var weatherStation = new WeatherStation
+                {
+                    Id = station.id.ToString(),
+                    Name = station.name,
+                    Altitude = station.height,
+                    Latitude = station.latitude,
+                    Longitude = station.longitude
+                };
+
+                weatherStations.Add(weatherStation);
+            }
+
+            _db.AddRange(weatherStations);
+            _db.SaveChanges();
+
             return Ok("Import completed!");
         }
     }

@@ -12,7 +12,7 @@ namespace FFCG.Weather.API.Import
         private readonly WeatherContext _db;
         private readonly IAppSettings _appSettings;
 
-        public WeatherStationBulkImportService(WeatherContext db, IAppSettings appSettings)
+        public WeatherStationBulkImportService(WeatherContext db, IConfiguration configuration)
         {
             _db = db;
             _appSettings = appSettings;

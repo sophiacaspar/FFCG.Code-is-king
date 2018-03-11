@@ -23,12 +23,15 @@ namespace FFCG.Weather.API
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            var settings = new ExternalEndpoints();
+            Configuration.Bind("ExternalEndpoints", settings);
+            services.AddSingleton(settings);
+            services.AddSingleton<IStationsDownloader, SmhiStationsDownloader>();
+
             services.AddDbContext<WeatherContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
-            services.AddSingleton<IAppSettings>(new AppSettings(Configuration));
             services.AddScoped<IWeatherStationRepository, WeatherStationRepository>();
-            services.AddScoped<IWeatherStationBulkImportService, WeatherStationBulkImportService>();
             services.AddMvc();
         }
 
@@ -41,27 +44,6 @@ namespace FFCG.Weather.API
             }
 
             app.UseMvc();
-        }
-    }
-
-    public interface IAppSettings
-    {
-        string Get(string section, string variableName);
-    }
-
-    public class AppSettings : IAppSettings
-    {
-        private IConfiguration _configuration;
-
-        public AppSettings(IConfiguration configuration)
-        {
-            _configuration = configuration;
-        }
-
-        public string Get(string section, string variableName)
-        {
-            var result = _configuration.GetSection($"{section}:{variableName}");
-            return result.Value;
         }
     }
 }
