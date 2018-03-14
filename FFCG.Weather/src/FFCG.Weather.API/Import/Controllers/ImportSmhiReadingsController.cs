@@ -13,12 +13,12 @@ namespace FFCG.Weather.API.Import.Controllers
     public class ImportSmhiReadingsController : ControllerBase
     {
         private readonly WeatherContext _context;
-        private readonly IReadingsDownloader _readingsDownloader;
+        private readonly IStationImportService _stationImportService;
 
-        public ImportSmhiReadingsController(WeatherContext context, IReadingsDownloader readingsDownloader)
+        public ImportSmhiReadingsController(WeatherContext context, IStationImportService stationImportService)
         {
             _context = context;
-            _readingsDownloader = readingsDownloader;
+            _stationImportService = stationImportService;
         }
 
         [HttpPost]
@@ -30,14 +30,14 @@ namespace FFCG.Weather.API.Import.Controllers
             if (station == null)
                 return BadRequest($"No station found with id: {id}");
 
-            string url = $"https://opendata-download-metobs.smhi.se/api/version/latest/parameter/1/station/{id}/period/corrected-archive/data.csv";
+            //string url = $"https://opendata-download-metobs.smhi.se/api/version/latest/parameter/1/station/{id}/period/corrected-archive/data.csv";
 
-            var httpClient = new HttpClient();
-            var response = await httpClient.GetStringAsync(url);
-
-            //_readingsDownloader.Download(id);
+            //var httpClient = new HttpClient();
+            //var response = await httpClient.GetStringAsync(url);
+           
+            var response = await _stationImportService.DownloadTemperatureReadingsForStation(id);
             var readings = new List<TemperatureReading>();
-            var temperatureReadings = response.Split('\n').Skip(10).Where(line => line.Length > 0);
+            var temperatureReadings = response.Split('\n').Skip(10).Where(line => line.Length > 0).Select(line => line);
 
             foreach (var temperatureReading in temperatureReadings)
             {
@@ -80,7 +80,7 @@ namespace FFCG.Weather.API.Import.Controllers
             var temperatureReading = new TemperatureReading
             {
                 Date = new DateTime(splitDate[0], splitDate[1], splitDate[2], splitTime[0], splitTime[1], splitTime[2]),
-                Temperature = double.Parse(row[2]),
+                Temperature = double.Parse(row[2].Replace('.', ',')),
                 StationId = stationId
             };
 

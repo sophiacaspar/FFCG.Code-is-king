@@ -113,5 +113,10 @@ namespace FFCG.Weather.Tests
 
             return Task.Run(() => response);
         }
+
+        public Task<string> DownloadTemperatureReadingsForStation(string stationId)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

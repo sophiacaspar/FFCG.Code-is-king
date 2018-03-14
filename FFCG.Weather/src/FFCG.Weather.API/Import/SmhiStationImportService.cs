@@ -22,5 +22,16 @@ namespace FFCG.Weather.API.Import
             var root = JsonConvert.DeserializeObject<SmhiResponseObject>(response);
             return root;
         }
+
+        public async Task<string> DownloadTemperatureReadingsForStation(string stationId)
+        {
+                var httpClient = new HttpClient();
+
+                var smhiReadingsUrl = _endpoints.ReadingsBaseUrl.Replace("{id}", stationId);
+
+                var response = await httpClient.GetStringAsync(smhiReadingsUrl);
+
+                return response;
+        }
     }
 }
