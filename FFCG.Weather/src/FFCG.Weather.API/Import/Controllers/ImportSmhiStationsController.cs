@@ -9,19 +9,19 @@ namespace FFCG.Weather.API.Import.Controllers
     [Route("api/import/smhi/stations")]
     public class ImportSmhiStationsController : ControllerBase
     {
-        private readonly IStationsDownloader _stationsDownloader;
+        private readonly IStationImportService _stationImportService;
         private readonly WeatherContext _db;
 
-        public ImportSmhiStationsController(WeatherContext db, IStationsDownloader stationsDownloader)
+        public ImportSmhiStationsController(WeatherContext db, IStationImportService stationImportService)
         {
             _db = db;
-            _stationsDownloader = stationsDownloader;
+            _stationImportService = stationImportService;
         }
 
         [HttpPost]
         public async Task<IActionResult> Post()
         {
-            var root = await _stationsDownloader.Download();
+            var root = await _stationImportService.DownloadAllStations();
 
             var weatherStations = new List<WeatherStation>();
 

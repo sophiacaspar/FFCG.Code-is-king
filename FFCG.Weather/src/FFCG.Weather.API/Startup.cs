@@ -26,7 +26,7 @@ namespace FFCG.Weather.API
             var settings = new ExternalEndpoints();
             Configuration.Bind("ExternalEndpoints", settings);
             services.AddSingleton(settings);
-            services.AddSingleton<IStationsDownloader, SmhiStationsDownloader>();
+            services.AddSingleton<IStationImportService, SmhiStationImportService>();
 
             services.AddDbContext<WeatherContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));

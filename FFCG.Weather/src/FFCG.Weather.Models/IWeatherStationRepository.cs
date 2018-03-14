@@ -7,5 +7,6 @@ namespace FFCG.Weather.Models
         WeatherStation Load(string id);
         WeatherStation Save(WeatherStation station);
         IEnumerable<WeatherStation> All();
+        IEnumerable<TemperatureReading> GetReadingsByStationId(string id);
     }
 }

@@ -20,6 +20,11 @@ namespace FFCG.Weather.API.Repositories
             return _db.Stations.ToList();
         }
 
+        public IEnumerable<TemperatureReading> GetReadingsByStationId(string id)
+        {
+            return _db.TemperatureReadings.Where(x => x.StationId == id).ToList();
+        }
+
         public WeatherStation Load(string id)
         {
             return _db.Stations.FirstOrDefault(x => x.Id == id);

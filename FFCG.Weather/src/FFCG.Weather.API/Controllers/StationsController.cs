@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using FFCG.Weather.Models;
 using Microsoft.AspNetCore.Mvc;
+using System;
 
 namespace FFCG.Weather.API.Controllers
 {
@@ -29,5 +30,22 @@ namespace FFCG.Weather.API.Controllers
         {
             return _repository.Load(id);
         }
+
+        [HttpGet("{id}/temperatures")]
+        public IEnumerable<TemperatureReadingViewModel> GetReadings(string id)
+        {
+            var readings = _repository.GetReadingsByStationId(id);
+
+            return readings.Select(r => new TemperatureReadingViewModel
+            {
+                Date = r.Date,
+                Temperature = r.Temperature
+            });
+        }
+    }
+    public class TemperatureReadingViewModel
+    {
+        public DateTime Date { get; set; }
+        public double Temperature { get; set; }
     }
 }

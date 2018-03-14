@@ -21,7 +21,7 @@ namespace FFCG.Weather.Importer
             //{
             //    var weatherStation = new WeatherStation
             //    {
-            //        Id = station.id.ToString(),
+            //        StationId = station.id.ToString(),
             //        Name = station.name,
             //        Longitude = station.longitude,
             //        Latitude = station.latitude,
