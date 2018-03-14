@@ -30,10 +30,6 @@ namespace FFCG.Weather.API.Import.Controllers
             if (station == null)
                 return BadRequest($"No station found with id: {id}");
 
-            //string url = $"https://opendata-download-metobs.smhi.se/api/version/latest/parameter/1/station/{id}/period/corrected-archive/data.csv";
-
-            //var httpClient = new HttpClient();
-            //var response = await httpClient.GetStringAsync(url);
            
             var response = await _stationImportService.DownloadTemperatureReadingsForStation(id);
             var readings = new List<TemperatureReading>();
@@ -43,28 +39,6 @@ namespace FFCG.Weather.API.Import.Controllers
             {
                 readings.Add(TemperatureReadingHandler(temperatureReading, id));
             }
-
-            //var readings = response.Split('\n').Skip(10).Where(line => line.Length > 0).Select(line =>
-            //{
-            //    var row = line.Split(';');
-
-            //    var date = row[0];
-            //    var time = row[1];
-            //    var temperature = row[2];
-
-            //    var couldParse = DateTime.TryParse(date + " " + time, out var dateTime);
-            //    if (!couldParse)
-            //        return null;
-
-            //    var temperatureValue = double.Parse(temperature.Replace('.', ','));
-
-            //    return new TemperatureReading
-            //    {
-            //        StationId = id,
-            //        Date = dateTime,
-            //        Temperature = temperatureValue
-            //    };
-            //}).ToList();
 
             await _context.TemperatureReadings.AddRangeAsync(readings.Where(x => x != null));
             await _context.SaveChangesAsync();
