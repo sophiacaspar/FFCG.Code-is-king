@@ -1,17 +1,40 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 
 namespace FFCG.Generation.Bowling
 {
     public class Game
     {
-        private List<int> _rollHistory = new List<int>();
+        private readonly List<int> _rollHistory = new List<int>();
         private int _score;
 
         public void Roll(int pins)
         {
             _rollHistory.Add(pins);
+        }
+
+        public int GetScore()
+        {
+            int roll = 0;
+            for (int frame = 0; frame < 10; frame++)
+            {
+                if (RollIsStrike(roll))
+                {
+                    _score += 10 + GetStrikeBonus(roll);
+                    roll += 1;
+                }
+                else if (RollIsSpare(roll))
+                {
+                    _score += 10 + GetSpareBonus(roll);
+                    roll += 2;
+                }
+                else
+                {
+                    _score += GetSumOfRollsInFrame(roll);
+                    roll += 2;
+                }
+            }
+
+            return _score;
         }
 
         private bool RollIsSpare(int roll)
@@ -24,29 +47,19 @@ namespace FFCG.Generation.Bowling
             return _rollHistory[roll] == 10;
         }
 
-        public int GetScore()
+        private int GetStrikeBonus(int roll)
         {
-            int roll = 0;
-            for (int i = 0; i < 10; i++)
-            {
-                if (RollIsStrike(roll))
-                {
-                    _score += 10 + _rollHistory[roll + 1] + _rollHistory[roll + 2];
-                    roll += 1;
-                }
-                else if (RollIsSpare(roll))
-                {
-                    _score += 10 + _rollHistory[roll + 2];
-                    roll += 2;
-                }
-                else
-                {
-                    _score += _rollHistory[roll] + _rollHistory[roll + 1];
-                    roll += 2;
-                }
-            }
+            return _rollHistory[roll + 1] + _rollHistory[roll + 2];
+        }
 
-            return _score;
+        private int GetSpareBonus(int roll)
+        {
+            return _rollHistory[roll + 2];
+        }
+
+        private int GetSumOfRollsInFrame(int roll)
+        {
+            return _rollHistory[roll] + _rollHistory[roll + 1];
         }
     }
 }
