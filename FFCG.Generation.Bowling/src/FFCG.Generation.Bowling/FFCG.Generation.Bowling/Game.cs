@@ -14,8 +14,8 @@ namespace FFCG.Generation.Bowling
 
         public int GetScore()
         {
-            int roll = 0;
-            for (int frame = 0; frame < 10; frame++)
+            var roll = 0;
+            for (var frame = 0; frame < 10; frame++)
             {
                 if (RollIsStrike(roll))
                 {
