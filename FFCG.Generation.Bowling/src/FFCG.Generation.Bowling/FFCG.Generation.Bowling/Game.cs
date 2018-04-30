@@ -6,17 +6,22 @@ namespace FFCG.Generation.Bowling
 {
     public class Game
     {
-        public int score;
-        private bool _spare = false;
-        private bool _strike;
-        private int _currentRoll;
         private List<int> _rollHistory = new List<int>();
         private int _score;
-
 
         public void Roll(int pins)
         {
             _rollHistory.Add(pins);
+        }
+
+        private bool RollIsSpare(int roll)
+        {
+            return _rollHistory[roll] + _rollHistory[roll + 1] == 10;
+        }
+
+        private bool RollIsStrike(int roll)
+        {
+            return _rollHistory[roll] == 10;
         }
 
         public int GetScore()
@@ -24,12 +29,12 @@ namespace FFCG.Generation.Bowling
             int roll = 0;
             for (int i = 0; i < 10; i++)
             {
-                if (_rollHistory[roll] == 10)
+                if (RollIsStrike(roll))
                 {
                     _score += 10 + _rollHistory[roll + 1] + _rollHistory[roll + 2];
                     roll += 1;
                 }
-                else if (_rollHistory[roll] + _rollHistory[roll + 1] == 10)
+                else if (RollIsSpare(roll))
                 {
                     _score += 10 + _rollHistory[roll + 2];
                     roll += 2;

@@ -84,5 +84,12 @@ namespace FFCG.Generation.Bowling.Tests
             RollMany(14, 0);
             Assert.Equal(47, _game.GetScore());
         }
+
+        [Fact]
+        public void Test_Perfect_Game()
+        {
+            RollMany(12,10);
+            Assert.Equal(300, _game.GetScore());
+        }
     }
 }
