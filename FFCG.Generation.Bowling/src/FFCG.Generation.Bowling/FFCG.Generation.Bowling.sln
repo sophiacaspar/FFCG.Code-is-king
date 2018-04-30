@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26730.16
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FFCG.Generation.Bowling", "FFCG.Generation.Bowling\FFCG.Generation.Bowling.csproj", "{20A2BCC1-B315-4984-9F7E-93F24EAF0848}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FFCG.Generation.Bowling.Tests", "FFCG.Generation.Bowling.Tests\FFCG.Generation.Bowling.Tests.csproj", "{FF9D8435-FE46-4502-8568-2909BCA2CB26}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{20A2BCC1-B315-4984-9F7E-93F24EAF0848}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{20A2BCC1-B315-4984-9F7E-93F24EAF0848}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{20A2BCC1-B315-4984-9F7E-93F24EAF0848}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{20A2BCC1-B315-4984-9F7E-93F24EAF0848}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FF9D8435-FE46-4502-8568-2909BCA2CB26}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FF9D8435-FE46-4502-8568-2909BCA2CB26}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FF9D8435-FE46-4502-8568-2909BCA2CB26}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FF9D8435-FE46-4502-8568-2909BCA2CB26}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {163EFACE-237F-4334-9EBC-5C5E60BFE412}
+	EndGlobalSection
+EndGlobal
