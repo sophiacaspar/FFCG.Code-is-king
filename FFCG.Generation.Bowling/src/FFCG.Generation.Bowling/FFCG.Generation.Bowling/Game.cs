@@ -16,45 +16,7 @@ namespace FFCG.Generation.Bowling
 
         public void Roll(int pins)
         {
-            _currentRoll += 1;
             _rollHistory.Add(pins);
-
-            //if (_currentRoll % 2 == 0)
-            //{
-            //    if (_rollHistory[_currentRoll -2] + pins == 10)
-            //    {
-            //        _spare = true;
-            //    }
-            //    else if (_strike)
-            //    {
-            //        UpdateScore(10 + (pins + _rollHistory[_currentRoll -2])*2);
-            //        _strike = false;
-            //    }
-            //    else
-            //    {
-            //        UpdateScore(pins + _rollHistory[_currentRoll - 2]);
-            //    }
-            //}
-            //else
-            //{
-            //    if (pins == 10)
-            //    {
-            //        _strike = true;
-            //        _rollHistory.Add(0);
-            //        _currentRoll += 1;
-            //    }
-
-            //    if (_spare)
-            //    {
-            //        UpdateScore(10 + pins);
-            //        _spare = false;
-            //    }
-            //}
-        }
-
-        public void UpdateScore(int newScore)
-        {
-            score += newScore;
         }
 
         public int GetScore()
@@ -77,8 +39,6 @@ namespace FFCG.Generation.Bowling
                     _score += _rollHistory[roll] + _rollHistory[roll + 1];
                     roll += 2;
                 }
-
-                
             }
 
             return _score;

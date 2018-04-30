@@ -54,35 +54,35 @@ namespace FFCG.Generation.Bowling.Tests
             Assert.Equal(16, _game.GetScore());
         }
 
-        //[Fact]
-        //public void Test_two_spares_in_a_row()
-        //{
-        //    RollSpare();
-        //    RollSpare();
-        //    _game.Roll(3);
-        //    RollMany(15,0);
-        //    Assert.Equal(31, _game.score);
-        //}
-
-        //[Fact]
-        //public void Test_one_strike()
-        //{
-        //    RollStrike();
-        //    _game.Roll(3);
-        //    _game.Roll(4);
-        //    RollMany(16,0);
-        //    Assert.Equal(24, _game.score);
+        [Fact]
+        public void Test_two_spares_in_a_row()
+        {
+            RollSpare();
+            RollSpare();
+            _game.Roll(3);
+            RollMany(15, 0);
+            Assert.Equal(31, _game.GetScore());
         }
 
-        //[Fact]
-        //public void Test_two_strikes_in_a_row()
-        //{
-        //    RollStrike();
-        //    RollStrike();
-        //    _game.Roll(3);
-        //    _game.Roll(4);
-        //    RollMany(14, 0);
-        //    Assert.Equal(47, _game.score);
-        //}
+        [Fact]
+        public void Test_one_strike()
+        {
+            RollStrike();
+            _game.Roll(3);
+            _game.Roll(4);
+            RollMany(16, 0);
+            Assert.Equal(24, _game.GetScore());
+        }
+
+        [Fact]
+        public void Test_two_strikes_in_a_row()
+        {
+            RollStrike();
+            RollStrike();
+            _game.Roll(3);
+            _game.Roll(4);
+            RollMany(14, 0);
+            Assert.Equal(47, _game.GetScore());
+        }
     }
 }
